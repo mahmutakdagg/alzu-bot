@@ -12,8 +12,7 @@ async def on_ready():
     print( f'{ client.user } Aktif!' )
     
     
-for i in listdir( './commands/' ):
-    print(listdir('./'))
+for i in listdir( './src/commands/' ):
     if i.endswith( '.py' ):
         client.load_extension( f'commands.{i[:-3]}' )
 
