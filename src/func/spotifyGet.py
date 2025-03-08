@@ -15,8 +15,8 @@ def getToken():
     
     jsonTOKEN = tokenGet.json()
     accessTOKEN = jsonTOKEN[ 'access_token' ]
-    
-    return accessTOKEN
+    print(tokenGet.json())
+    #return accessTOKEN
 
 AUTH = { "Authorization": f"Bearer { getToken() }" }
 
