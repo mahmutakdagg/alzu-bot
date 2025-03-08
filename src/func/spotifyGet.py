@@ -2,7 +2,6 @@ import requests
 from dotenv import load_dotenv
 from os import getenv
 
-load_dotenv('/.env')
 
 
 def getToken():
@@ -15,8 +14,7 @@ def getToken():
     
     jsonTOKEN = tokenGet.json()
     accessTOKEN = jsonTOKEN[ 'access_token' ]
-    print(tokenGet.json())
-    #return accessTOKEN
+    return accessTOKEN
 
 AUTH = { "Authorization": f"Bearer { getToken() }" }
 
