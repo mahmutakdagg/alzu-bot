@@ -43,7 +43,7 @@ class spotify( Cog ):
                 embed.add_field(name=i.title, value="dinliyor")
                 embed.add_field(name='Sanatçı', value=i.artist, inline=False)
                 embed.add_field(name='Albüm', value=i.album, inline=False)
-                embed.set_image(url=i.album_cover_url)
+                embed.set_thumbnail(url=i.album_cover_url)
                 await ctx.channel.send(embed=embed)
 def setup( client): client.add_cog( spotify( client ) )
 
