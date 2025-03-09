@@ -4,8 +4,6 @@ import os
 
 
 load_dotenv()
-=======
-load_dotenv()
 
 def getToken():
     SpotifyClientID =os.getenv('SpotifyClientID')
