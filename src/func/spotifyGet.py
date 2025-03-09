@@ -13,11 +13,8 @@ def getToken():
     tokenGet = requests.post( "https://accounts.spotify.com/api/token", data = f"grant_type=client_credentials&client_id={ SpotifyClientID }&client_secret={ SpotifyClientSECRET }", headers = head )
     
     jsonTOKEN = tokenGet.json()
-    print(jsonTOKEN)    
-    print(SpotifyClientID)
-    print(SpotifyClientSECRET)
-#accessTOKEN = jsonTOKEN[ 'access_token' ]
-    #return accessTOKEN
+    accessTOKEN = jsonTOKEN[ 'access_token' ]
+    return accessTOKEN
 
 AUTH = { "Authorization": f"Bearer { getToken() }" }
 
