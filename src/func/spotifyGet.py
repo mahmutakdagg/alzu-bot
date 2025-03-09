@@ -6,7 +6,7 @@ load_dotenv()
 
 def getToken():
     SpotifyClientID =os.getenv('SpotifyClientID')
-    SpotifyClientSECRET =  os.getenv('SpotifyClientSECRET)
+    SpotifyClientSECRET =  os.getenv('SpotifyClientSECRET')
 
     head = { 'Content-Type': "application/x-www-form-urlencoded" }
 
