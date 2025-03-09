@@ -5,7 +5,7 @@ from os import getenv, listdir
 
 load_dotenv()
 
-client = commands.Bot( command_prefix = ">>", intents = Intents.all() )
+client = commands.Bot( command_prefix = ",", intents = Intents.all() )
 
 @client.event
 async def on_ready():
