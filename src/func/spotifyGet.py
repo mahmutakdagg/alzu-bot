@@ -2,7 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 
-
+load_dotenv()
 
 def getToken():
     SpotifyClientID =os.environ['SpotifyClientID']
