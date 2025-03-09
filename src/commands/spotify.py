@@ -40,9 +40,9 @@ class spotify( Cog ):
         for i in acc:
             if isinstance(i, Spotify):
                 embed = Embed(title = f"{ctx.author.name} 🎶")
-                embed.add_field(name=i.title, value="dinliyor")
-                embed.add_field(name='Sanatçı', value=i.artist, inline=False)
-                embed.add_field(name='Albüm', value=i.album, inline=False)
+                embed.add_field(name=i.title, value="dinliyor", inline=True)
+                embed.add_field(name='Sanatçı', value=i.artist, inline=True)
+                embed.add_field(name='Albüm', value=i.album, inline=True)
                 embed.set_thumbnail(url=i.album_cover_url)
                 await ctx.channel.send(embed=embed)
 def setup( client): client.add_cog( spotify( client ) )
