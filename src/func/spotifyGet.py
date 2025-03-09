@@ -14,6 +14,8 @@ def getToken():
     
     jsonTOKEN = tokenGet.json()
     print(jsonTOKEN)    
+    print(SpotifyClientID)
+    print(SpotifyClientSECRET)
 #accessTOKEN = jsonTOKEN[ 'access_token' ]
     #return accessTOKEN
 
