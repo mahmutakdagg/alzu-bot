@@ -4,7 +4,7 @@ from nextcord import Spotify
 from nextcord import slash_command, Interaction, Embed
 from func.spotifyGet import getSpotifyUrl, getDisplayName, getFollowersCount, getPlaylists
 from nextcord.ext import commands
-
+from nextcord import *
 class spotify( Cog ):
     def __init__( self, client ):
         self.client = client
@@ -35,11 +35,11 @@ class spotify( Cog ):
 
 
     @commands.command()
-    async def sp(self, ctx):
-        acc = ctx.user.activities
+    async def sp(self, ctx : Message):
+        acc = ctx.author.activities
         for i in acc:
             if isinstance(i, Spotify):
-                embed = Embed(title = f"{ctx.user.name} 🎶")
+                embed = Embed(title = f"{ctx.author.name} 🎶")
                 embed.add_field(name=i.title, value="dinliyor")
                 embed.add_field(name='Sanatçı', value=i.artist, inline=False)
                 embed.add_field(name='Albüm', value=i.album, inline=False)
