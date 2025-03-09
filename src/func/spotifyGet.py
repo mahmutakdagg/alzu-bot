@@ -54,5 +54,7 @@ def getPlaylists(hesap):
 def searchAlbum(album):
     API = requests.get( f"https://api.spotify.com/v1/search?q={album}&type=album", headers = AUTH )
     APIjson = API.json()
-    APIalbum = APIjson['tracks']['items'][0]['album']['external_urls']['spotify']
-    return APIalbum
+    APIalbum = APIjson['tracks']['items'][0]
+    returnedValue = APIalbum['album']['external_urls']['spotify']
+    return returnedValue
+
