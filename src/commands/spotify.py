@@ -35,16 +35,15 @@ class spotify( Cog ):
 
 
     @commands.command()
-    async def sp(self, interaction : Interaction, kisi : nextcord.Member = None):
-        if kisi is None:
-            kisi == interaction.user
-        acc = kisi.activities
+    async def sp(self, ctx):
+        acc = ctx.user.activities
         for i in acc:
             if isinstance(i, Spotify):
-                embed = Embed(title = f"{interaction.user.name} 🎶")
+                embed = Embed(title = f"{ctx.user.name} 🎶")
                 embed.add_field(name=i.title, value="dinliyor")
                 embed.add_field(name='Sanatçı', value=i.artist, inline=False)
                 embed.add_field(name='Albüm', value=i.album, inline=False)
                 embed.set_image(url=i.album_cover_url)
+                await ctx.channel.send(embed=embed)
 def setup( client): client.add_cog( spotify( client ) )
 
