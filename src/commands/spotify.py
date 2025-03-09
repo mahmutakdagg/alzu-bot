@@ -39,8 +39,7 @@ class spotify( Cog ):
         acc = ctx.author.activities
         for i in acc:
             if isinstance(i, Spotify):
-                embed = Embed(title = f"{ctx.author.name} 🎶")
-                embed.add_field(name=i.title, value="dinliyor", inline=True)
+                embed = Embed(title = f"{ctx.author.name} 🎶", description=f"[link]({i.track_url}){i.title} Dinleniyor")
                 embed.add_field(name='Sanatçı', value=i.artist, inline=True)
                 embed.add_field(name='Albüm', value=i.album, inline=True)
                 embed.set_thumbnail(url=i.album_cover_url)
