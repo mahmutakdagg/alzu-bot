@@ -2,13 +2,11 @@ import requests
 from dotenv import load_dotenv
 import os
 
-<<<<<<< HEAD
 
 load_dotenv()
 =======
 load_dotenv()
 
->>>>>>> 8c01db3ab7bb43af9df540c48d8590d11ef75c3b
 def getToken():
     SpotifyClientID =os.getenv('SpotifyClientID')
     SpotifyClientSECRET =  os.getenv('SpotifyClientSECRET')
