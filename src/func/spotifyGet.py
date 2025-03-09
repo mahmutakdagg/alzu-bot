@@ -2,7 +2,6 @@ import requests
 from dotenv import load_dotenv
 import os
 
-
 load_dotenv()
 
 def getToken():
@@ -51,3 +50,9 @@ def getPlaylists(hesap):
     APIjson = API.json()
     return APIjson[ 'items' ]
 
+
+def searchAlbum(album):
+    API = requests.get( f"https://api.spotify.com/v1/search?q={album}&type=album", headers = AUTH )
+    APIjson = API.json()
+    APIalbum = APIjson['tracks']['items'][0]['album']['external_urls']['spotify']
+    return APIalbum
