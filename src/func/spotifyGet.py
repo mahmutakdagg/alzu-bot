@@ -10,7 +10,7 @@ def getToken():
 
     head = { 'Content-Type': "application/x-www-form-urlencoded" }
 
-    tokenGet = requests.post( "https://accounts.spotify.com/api/token", data = f"grant_type=client_credentials&client_id=a261ed3bb88942a0b08d130a40920462&client_secret=f4800157163347518ad94a2e017eb550", headers = head )
+    tokenGet = requests.post( "https://accounts.spotify.com/api/token", data = f"grant_type=client_credentials&client_id={SpotifyClientID}&client_secret={SpotifyClientSECRET}", headers = head )
     
     jsonTOKEN = tokenGet.json()
     accessTOKEN = jsonTOKEN[ 'access_token' ]
