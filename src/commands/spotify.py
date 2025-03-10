@@ -2,7 +2,7 @@ from nextcord.ext.commands import Cog
 import nextcord
 from nextcord import Spotify
 from nextcord import slash_command, Interaction, Embed
-from func.spotifyGet import getSpotifyUrl, getDisplayName, getFollowersCount, getPlaylists, searchAlbum
+from func.spotifyGet import getSpotifyUrl, getDisplayName, getFollowersCount, getPlaylists
 from nextcord.ext import commands
 from nextcord import *
 class spotify( Cog ):
@@ -42,7 +42,7 @@ class spotify( Cog ):
                 print(searchAlbum(i.album))
                 embed = Embed(title = f"{ctx.author.name} 🎶", description=f"[{i.title}]({i.track_url}) Dinleniyor")
                 embed.add_field(name='Sanatçı', value=i.artist, inline=True)
-                embed.add_field(name='Albüm', value=f"[{i.album}]({searchAlbum(i.album)})", inline=True)
+                embed.add_field(name='Albüm', value=i.album, inline=True)
                 embed.set_thumbnail(url=i.album_cover_url)
                 await ctx.channel.send(embed=embed)
 def setup( client): client.add_cog( spotify( client ) )
